@@ -1,0 +1,59 @@
+1. Contare quanti iscritti ci sono stati ogni anno
+SELECT YEAR(enrolment_date), COUNT(*)
+FROM students
+GROUP BY YEAR(enrolment_date)
+
+RESULTS:
+2019	1709
+2018	912
+2020	1645
+2021	734
+
+2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
+SELECT office_address, COUNT(*)
+FROM teachers
+GROUP BY office_address
+
+RESULTS:
+Contrada Penelope 73			4
+Incrocio Marini 9			3
+Strada Vitali 8 Piano 0			5
+Via Mariano 48				4
+Borgo Martino 82 Appartamento 07	3
+Rotonda Martinelli 309			9
+Contrada Amato 58 Piano 2		5
+Borgo Elga 89				8
+Piazza Ferretti 619			3
+Strada Kociss 997 Piano 8		5
+Borgo Demis 1				1
+Via Eusebio 167 Appartamento 28		6
+Contrada Rita 5 Appartamento 71		3
+Piazza Demian 856 Appartamento 63	3
+Strada Neri 577				3
+Borgo Elio 234 Piano 4			4
+Contrada Santoro 17 Appartamento 30	3
+Rotonda Carmela 10 Piano 1		6
+Via Giacinto 11 Piano 8			3
+Strada Concetta 6			3
+Piazza Aroldo 8 Appartamento 85		1
+Via Maika 491				3
+Piazza Pellegrino 613 Piano 8		2
+Strada Lombardi 855			3
+Incrocio Testa 142 Piano 7		2
+Borgo Ippolito 5 Piano 5		1
+Rotonda Teseo 9				2
+Strada Lino 8				1
+Via Elga 7 Piano 4			1
+
+3. Calcolare la media dei voti di ogni appello d'esame
+SELECT student_id, AVG(vote)
+FROM exam_student
+GROUP BY student_id
+
+4. Contare quanti corsi di laurea ci sono per ogni dipartimento
+SELECT name, COUNT(*)
+FROM departments
+GROUP BY name
+
+RESULTS:
+1 corso per Dipartimento
